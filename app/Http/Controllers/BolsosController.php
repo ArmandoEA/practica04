@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bolsos;
 use Illuminate\Http\Request;
 use DB;
+use App\Http\Requests\BolsoRequest;
 
 class BolsosController extends Controller
 {
@@ -36,10 +37,19 @@ class BolsosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BolsoRequest $request)
     {
-        Bolsos::create($request->all());
-        return view('bolsos.create');
+        //Bolsos::create($request->all());
+        $bolso = new Bolsos;
+
+        $bolso->name = $request->name;
+        $bolso->description = $request->description;
+        $bolso->price = $request->price;
+        $bolso->photo = $request->photo;
+
+        $bolso->save();
+
+        return redirect()->route('bolsos.index')->with('info', 'El producto se guardó correctamente');
     }
 
     /**
@@ -59,9 +69,9 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bolsos $bolsos)
+    public function edit(Bolsos $bolso)
     {
-        //
+        return view('bolsos.edit')->with('bolsos', $bolso);
     }
 
     /**
@@ -71,10 +81,17 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bolsos $bolsos)
+    public function update(BolsoRequest $request, Bolsos $bolso)
     {
-        Bolsos::update($request->all());
-        return back;
+        //Bolsos::update($request->all());
+        $bolso->name = $request->name;
+        $bolso->description = $request->description;
+        $bolso->price = $request->price;
+        $bolso->photo = $request->photo;
+
+        $bolso->save();
+
+        return redirect()->route('bolsos.index')->with('info', 'El producto se modificó correctamente');
     }
 
     /**

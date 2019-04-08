@@ -1,10 +1,20 @@
-<html>
-<body>
-  <h1> MODIFICAR BOLSO </h1>
-  <form action="{{route('bolsos.update')}}" method="post">
-    {{csrf_field()}}
-    @include('bolsos.form');
-    <button type="submit" class="btn btn-secondary">Guardar Cambios</button>
-  </form>
-</body>
-</html>
+@extends('layout')
+
+@section('content')
+  <div class="col-sm-8">
+    <h2>
+      Editar Producto
+      <a href="{{ route('bolsos.index') }}" class="btn btn-secondary pull-right">Regresar</a>
+    </h2>
+
+    @include('bolsos.fragment.error')
+
+    {!! Form::model($bolsos, ['route' => ['bolsos.update', $bolsos], 'method' => 'PUT']) !!}
+    @include('bolsos.fragment.form')
+    {!! Form::close() !!}
+
+  </div>
+  <div class="col-sm-4">
+    @include('bolsos.fragment.aside')
+  </div>
+@endsection
