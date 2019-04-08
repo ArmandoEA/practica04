@@ -6,7 +6,7 @@
       Lista de bolsos
       <a href="{{ route('bolsos.create')}}" class="btn btn-primary pull-right"> Nuevo </a>
     </h2>
-    Información extra
+    @include('bolsos.fragment.info')
     <table>
       <thead>
         <tr>
@@ -46,6 +46,6 @@
   </div>
 
   <div class="col-sm-4">
-    Información extra
+    @include('bolsos.fragment.aside')
   </div>
 @endsection

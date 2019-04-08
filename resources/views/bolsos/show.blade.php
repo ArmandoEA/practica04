@@ -17,6 +17,6 @@
   </div>
 
   <div class="col-sm-4">
-    Información extra
+    @include('bolsos.fragment.aside')
   </div>
 @endsection

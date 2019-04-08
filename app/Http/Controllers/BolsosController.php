@@ -83,8 +83,9 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bolsos $bolsos)
+    public function destroy(Bolsos $bolso)
     {
-        //
+      $bolso->delete();
+      return back()->with('info', 'El registro se eliminó correctamente');
     }
 }
