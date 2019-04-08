@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//('ruta', 'controlador');
 Route::resource('bolsos', 'BolsosController');

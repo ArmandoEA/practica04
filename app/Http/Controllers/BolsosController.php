@@ -15,8 +15,9 @@ class BolsosController extends Controller
      */
     public function index()
     {
-      $bolos = DB::table('bolsos')->get();
-        return view('bolsos.index')->with('bolsos',$bolos);
+        //$bolsos = DB::table('bolsos')->get();
+        $bolsos = Bolsos::orderBy('id','ASC')->paginate(5);
+        return view('bolsos.index')->with('bolsos',$bolsos);
     }
 
     /**
@@ -72,7 +73,8 @@ class BolsosController extends Controller
      */
     public function update(Request $request, Bolsos $bolsos)
     {
-        //
+        Bolsos::update($request->all());
+        return back;
     }
 
     /**
