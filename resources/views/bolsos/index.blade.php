@@ -46,6 +46,6 @@
   </div>
 
   <div class="col-sm-4">
-    mensaje
+    Información extra
   </div>
 @endsection

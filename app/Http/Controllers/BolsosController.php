@@ -48,9 +48,9 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function show(Bolsos $bolsos)
+    public function show(Bolsos $bolso)
     {
-        //
+        return view('bolsos.show')->with('bolsos', $bolso);
     }
 
     /**
