@@ -15,10 +15,11 @@ class CreateBolsosTable extends Migration
     {
         Schema::create('bolsos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name',128);
+            $table->string('name',128)->unique();
             $table->string('description',512);
             $table->decimal('price',6,2);
             $table->string('photo',256);
+            $table->string('slug',128)->unique();
             $table->timestamps();
         });
     }

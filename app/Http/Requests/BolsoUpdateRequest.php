@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BolsoRequest extends FormRequest
+class BolsoUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,11 @@ class BolsoRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'        => 'required | unique:bolsos,name',
-            'description' => 'required',
-            'price'       => 'required | numeric | min: 0.00',
-            'photo'       => 'required',
-        ];
+      return [
+        'name'        => 'required | unique:bolsos,name,' . $this->id,
+        'description' => 'required',
+        'price'       => 'required | numeric | min: 0.00',
+        'photo'       => 'required',
+      ];
     }
 }

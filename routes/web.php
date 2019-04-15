@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 //('ruta', 'controlador');
 Route::resource('bolsos', 'BolsosController');
+//Route::get('bolsos/{slug}', ['as' => 'bolsos', 'bolsos' => 'BolsosController@show']);

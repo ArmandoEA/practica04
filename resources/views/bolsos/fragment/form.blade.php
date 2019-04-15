@@ -1,3 +1,6 @@
+{!! Form::hidden('id', null, ['class' => 'form-control']) !!}
+{!! Form::hidden('slug', null, ['class' => 'form-control']) !!}
+
 <div class="form-group">
   {!! Form::label('name', 'Nombre del bolso') !!}
   {!! Form::text('name', null, ['class' => 'form-control']) !!}

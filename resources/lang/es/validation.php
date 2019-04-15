@@ -49,7 +49,7 @@ return [
     ],
     "mimes"            => ":attribute debe ser un archivo con formato: :values.",
     "min"              => [
-        "numeric" => "El tamaño de :attribute debe ser de al menos :min.",
+        "numeric" => "El valor del :attribute debe ser de al menos $:min.",
         "file"    => "El tamaño de :attribute debe ser de al menos :min kilobytes.",
         "string"  => ":attribute debe contener al menos :min caracteres.",
         "array"   => ":attribute debe tener al menos :min elementos.",
@@ -72,7 +72,7 @@ return [
     ],
     "string"           => "The :attribute must be a string.",
     "timezone"         => "El :attribute debe ser una zona válida.",
-    "unique"           => ":attribute ya ha sido registrado.",
+    "unique"           => "Ya hay un registro con el mismo :attribute.",
     "url"              => "El formato :attribute es inválido.",
 
     /*

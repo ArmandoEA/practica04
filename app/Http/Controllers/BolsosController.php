@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Bolsos;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use DB;
 use App\Http\Requests\BolsoRequest;
+use App\Http\Requests\BolsoUpdateRequest;
+use Illuminate\Support\Str as Str;
 
 class BolsosController extends Controller
 {
@@ -46,6 +49,7 @@ class BolsosController extends Controller
         $bolso->description = $request->description;
         $bolso->price = $request->price;
         $bolso->photo = $request->photo;
+        $bolso->slug = Str::slug($bolso->name);
 
         $bolso->save();
 
@@ -58,8 +62,9 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function show(Bolsos $bolso)
+    public function show($slug)
     {
+        $bolso = Bolsos::where('slug','=', $slug)->firstOrFail();
         return view('bolsos.show')->with('bolsos', $bolso);
     }
 
@@ -69,8 +74,9 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bolsos $bolso)
+    public function edit($slug)
     {
+        $bolso = Bolsos::where('slug','=', $slug)->firstOrFail();
         return view('bolsos.edit')->with('bolsos', $bolso);
     }
 
@@ -81,15 +87,20 @@ class BolsosController extends Controller
      * @param  \App\Bolsos  $bolsos
      * @return \Illuminate\Http\Response
      */
-    public function update(BolsoRequest $request, Bolsos $bolso)
+    public function update(BolsoUpdateRequest $request, Bolsos $bolso)
     {
-        //Bolsos::update($request->all());
-        $bolso->name = $request->name;
-        $bolso->description = $request->description;
-        $bolso->price = $request->price;
-        $bolso->photo = $request->photo;
+      /*Rule::unique('bolsos')->ignore($bolso->id, 'id');*/
 
-        $bolso->save();
+      //Bolsos::update($request->all());
+      //Bolsos::where('slug', $slug)->update(Input::all());
+
+      $bolso->name = $request->name;
+      $bolso->description = $request->description;
+      $bolso->price = $request->price;
+      $bolso->photo = $request->photo;
+      $bolso->slug = Str::slug($bolso->name);
+
+      $bolso->save();
 
         return redirect()->route('bolsos.index')->with('info', 'El producto se modificó correctamente');
     }

@@ -26,10 +26,11 @@
             <td>{{ $bolso->price }}</td>
             <td>{{ $bolso->photo }}</td>
             <td>
-              <a href="{{ route('bolsos.show', $bolso) }}">Ver</a>
+              <a href="{{ route('bolsos.show', $bolso->slug) }}">Ver</a>
+              <!--<a href="/bolsos/{{$bolso->slug}}">Ver</a>-->
             </td>
             <td>
-              <a href="{{ route('bolsos.edit', $bolso) }}">Editar</a>
+              <a href="{{ route('bolsos.edit', $bolso->slug) }}">Editar</a>
             </td>
             <td>
               <form action="{{ route('bolsos.destroy', $bolso) }}" method="POST">
