@@ -9,8 +9,8 @@
 
     @include('bolsos.fragment.error')
 
-    {!! Form::open(['route' => 'bolsos.store']) !!}
-    @include('bolsos.fragment.form')
+    {!! Form::open(['route' => 'bolsos.store', 'files' => true]) !!}
+      @include('bolsos.fragment.form')
     {!! Form::close() !!}
 
   </div>

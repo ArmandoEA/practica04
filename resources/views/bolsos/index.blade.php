@@ -24,7 +24,10 @@
               {{ $bolso->description }}
             </td>
             <td>{{ $bolso->price }}</td>
-            <td>{{ $bolso->photo }}</td>
+            <td>
+              <!-- {{ $bolso->photo }} -->
+              <img src="{{ $bolso->photo }}">
+            </td>
             <td>
               <a href="{{ route('bolsos.show', $bolso->slug) }}">Ver</a>
               <!--<a href="/bolsos/{{$bolso->slug}}">Ver</a>-->
@@ -43,7 +46,7 @@
         @endforeach
       </tbody>
     </table>
-    {!! $bolsos->render() !!}
+    {!! $bolsos->render() !!} <!--Para que muestre la paginación-->
   </div>
 
   <div class="col-sm-4">

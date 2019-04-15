@@ -18,7 +18,7 @@
 
 <div class="form-group">
   {!! Form::label('photo', 'Foto del bolso') !!}
-  {!! Form::text('photo', null, ['class' => 'form-control']) !!}
+  {!! Form::file('photo', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

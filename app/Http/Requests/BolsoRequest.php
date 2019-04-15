@@ -27,7 +27,7 @@ class BolsoRequest extends FormRequest
             'name'        => 'required | unique:bolsos,name',
             'description' => 'required',
             'price'       => 'required | numeric | min: 0.00',
-            'photo'       => 'required',
+            'photo'       => 'required | image',
         ];
     }
 }

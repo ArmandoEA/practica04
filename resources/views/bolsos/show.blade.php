@@ -13,7 +13,7 @@
     <p>
       {{ $bolsos->description}}
     </p>
-      {!! $bolsos->photo !!}
+      <img src="{!! $bolsos->photo !!}">
   </div>
 
   <div class="col-sm-4">

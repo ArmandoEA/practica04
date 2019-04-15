@@ -9,7 +9,7 @@
 
     @include('bolsos.fragment.error')
 
-    {!! Form::model($bolsos, ['route' => ['bolsos.update', $bolsos], 'method' => 'PUT']) !!}
+    {!! Form::model($bolsos, ['route' => ['bolsos.update', $bolsos], 'method' => 'PUT', 'files' => true]) !!}
     @include('bolsos.fragment.form')
     {!! Form::close() !!}
 

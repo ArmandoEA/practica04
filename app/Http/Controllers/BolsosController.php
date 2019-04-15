@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bolsos;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Http\Requests\BolsoRequest;
 use App\Http\Requests\BolsoUpdateRequest;
@@ -44,14 +45,15 @@ class BolsosController extends Controller
     {
         //Bolsos::create($request->all());
         $bolso = new Bolsos;
-
         $bolso->name = $request->name;
         $bolso->description = $request->description;
         $bolso->price = $request->price;
         $bolso->photo = $request->photo;
         $bolso->slug = Str::slug($bolso->name);
-
         $bolso->save();
+
+        $path = Storage::disk('public')->put('image', $request->file('photo'));
+        $bolso->fill(['photo' => asset($path)])->save(); 
 
         return redirect()->route('bolsos.index')->with('info', 'El producto se guardó correctamente');
     }
@@ -99,8 +101,10 @@ class BolsosController extends Controller
       $bolso->price = $request->price;
       $bolso->photo = $request->photo;
       $bolso->slug = Str::slug($bolso->name);
-
       $bolso->save();
+
+      $path = Storage::disk('public')->put('image', $request->file('photo'));
+      $bolso->fill(['photo' => asset($path)])->save();
 
         return redirect()->route('bolsos.index')->with('info', 'El producto se modificó correctamente');
     }
