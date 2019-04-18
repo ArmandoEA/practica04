@@ -1,0 +1,54 @@
+.titulo{
+  color: blue;
+  background: aqua;
+  font-size: 80px;
+  letter-spacing: 10px;
+  font-weight: bold;
+  font-family: "serif";
+}
+
+h2{
+  color: blue;
+  font-weight: bold;
+  font-family: "serif";
+}
+
+.tabla{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*.tabla_cuerpo tr:nth-child(even){background-color: #f2f2f2;}*/
+
+.tabla_cuerpo tr:hover {background-color: #bbb;}
+
+.tabla_cabecera{
+  color: white;
+  background: #2B2192;
+}
+
+th, td {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.etiqueta{
+  font-weight: bold;
+}
+
+.boton-derecha{
+  float: right;
+}
+
+.imagen_index{
+  width: 50%;
+}
+
+.imagen_show{
+  width: 100%;
+}
+
+body{
+  background: #F1FFFE;
+}

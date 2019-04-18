@@ -4,7 +4,7 @@
   <div class="col-sm-8">
     <h2>
       Editar Producto
-      <a href="{{ route('bolsos.index') }}" class="btn btn-secondary pull-right">Regresar</a>
+      <a href="{{ route('bolsos.index') }}" class="btn btn-secondary pull-right boton-derecha">Regresar</a>
     </h2>
 
     @include('bolsos.fragment.error')

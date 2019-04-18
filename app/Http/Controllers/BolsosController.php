@@ -53,7 +53,7 @@ class BolsosController extends Controller
         $bolso->save();
 
         $path = Storage::disk('public')->put('image', $request->file('photo'));
-        $bolso->fill(['photo' => asset($path)])->save(); 
+        $bolso->fill(['photo' => asset($path)])->save();
 
         return redirect()->route('bolsos.index')->with('info', 'El producto se guardó correctamente');
     }
@@ -103,8 +103,10 @@ class BolsosController extends Controller
       $bolso->slug = Str::slug($bolso->name);
       $bolso->save();
 
-      $path = Storage::disk('public')->put('image', $request->file('photo'));
-      $bolso->fill(['photo' => asset($path)])->save();
+      if($bolso->photo != $request->photo){
+        $path = Storage::disk('public')->put('image', $request->file('photo'));
+        $bolso->fill(['photo' => asset($path)])->save();
+      }
 
         return redirect()->route('bolsos.index')->with('info', 'El producto se modificó correctamente');
     }

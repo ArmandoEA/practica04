@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <title> Bolsos ALE </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{!! asset('css/estilosBolsos.css') !!}">
 </head>
 <body>
+  <h1 class="page-header text-center titulo"> Bolsos ALE </h1>
   <div class="container">
-    <h1 class="page-header text-center"> Bolsos ALE </h1>
-    <br>
+    <br><br>
     <div class="row">
       <div class="col-xs-12">
 
