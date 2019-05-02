@@ -1,4 +1,5 @@
 @extends('layout')
+@extends('fragments.profileBar')
 
 @section('content')
   <div class="col-sm-8">
@@ -28,7 +29,7 @@
             <td>${{ $bolso->price }}</td>
             <td>
               <!--{{ $bolso->photo }}-->
-              <img src="{{ $bolso->photo }}" class="imagen_index">
+              <img src="{{ $bolso->photo }}" class="imagen_index" alt="{!! $bolso->name !!}" title="{!! $bolso->name !!}">
             </td>
             <td>
               <a href="{{ route('bolsos.show', $bolso->slug) }}">
@@ -51,6 +52,7 @@
         @endforeach
       </tbody>
     </table>
+    <br>
   </div>
     {!! $bolsos->render() !!} <!--Para que muestre la paginación-->
   </div>

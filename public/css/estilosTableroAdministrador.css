@@ -1,0 +1,16 @@
+.boton{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.barraPerfil{
+  font-weight: bold;
+  background: #F1FFFE;
+  padding: 0px 25px;
+}
+
+body{
+  background-image: url("../images/fondo2.jpg");
+  background-size: contain;
+  background-position: center;
+}

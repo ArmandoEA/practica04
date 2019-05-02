@@ -18,3 +18,7 @@ Route::get('/', function () {
 //('ruta', 'controlador');
 Route::resource('bolsos', 'BolsosController');
 //Route::get('bolsos/{slug}', ['as' => 'bolsos', 'bolsos' => 'BolsosController@show']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

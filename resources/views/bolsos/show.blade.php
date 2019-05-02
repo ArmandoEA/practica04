@@ -1,4 +1,5 @@
 @extends('layout')
+@extends('fragments.profileBar')
 
 @section('content')
   <div class="col-sm-8">
@@ -14,7 +15,10 @@
     <p>
       {{ $bolsos->description}}
     </p>
-      <img src="{!! $bolsos->photo !!}" class="imagen_show">
+      <img src="{!! $bolsos->photo !!}" class="imagen_show" alt="{!! $bolsos->name !!}" title="{!! $bolsos->name !!}">
+      <div>
+        <br><br>
+      </div>
   </div>
 
   <div class="col-sm-4">

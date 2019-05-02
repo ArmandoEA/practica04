@@ -1,3 +1,9 @@
-<p class="alert alert-info">
-  Los mejores bolsos al mejor precio.
-</p>
+<div class="alert alert-info panel-perfil">
+  <p> {{ Auth::user()->name }} </p>
+
+  <div>
+      <a href="{{ route('home') }}" class="btn btn-info btn-block">
+        Perfil
+      </a>
+  </div>
+</div>

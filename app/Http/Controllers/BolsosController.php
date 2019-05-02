@@ -21,7 +21,7 @@ class BolsosController extends Controller
     public function index()
     {
         //$bolsos = DB::table('bolsos')->get();
-        $bolsos = Bolsos::orderBy('id','ASC')->paginate(5);
+        $bolsos = Bolsos::orderBy('id','ASC')->paginate(3);
         return view('bolsos.index')->with('bolsos',$bolsos);
     }
 

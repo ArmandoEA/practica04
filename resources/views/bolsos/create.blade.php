@@ -1,4 +1,5 @@
 @extends('layout')
+@extends('fragments.profileBar')
 
 @section('content')
   <div class="col-sm-8">

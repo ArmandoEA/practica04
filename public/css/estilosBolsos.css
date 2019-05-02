@@ -49,6 +49,12 @@ th, td {
   width: 100%;
 }
 
+.panel-perfil{
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
 body{
   background: #F1FFFE;
 }
