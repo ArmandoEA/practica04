@@ -58,3 +58,17 @@ th, td {
 body{
   background: #F1FFFE;
 }
+
+
+/*PUBLICIDAD*/
+.publicidad_logos{
+  font-size: 45px;
+}
+
+.logo_insta{
+  color: #FF00F3;
+}
+
+.logo_whats{
+  color: #3EE836;
+}
