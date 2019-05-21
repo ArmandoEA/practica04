@@ -3,11 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="description" content="Administra la pagina con el mejor contenido en venta de bolsos">
+    <meta name="keywords" content="bolsos, bolsas, ALE, usuario, sesión, administrador">
+    <meta name="author" content="Armando Espinoza">
+    <meta name="reploy-to" content="armando_2496@hotmail.com">
+    <meta name="robots" content="all">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Bolsos ALE</title>
+    <title>Cuenta de usuario | Bolsos ALE</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

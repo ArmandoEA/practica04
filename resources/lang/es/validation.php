@@ -38,7 +38,7 @@ return [
     "exists"           => ":attribute es inválido.",
     "filled"           => "El campo :attribute es obligatorio.",
     "image"            => "El archivo debe ser una imagen.",
-    "in"               => ":attribute es inválido.",
+    "in"               => ":attribute inválida.",
     "integer"          => ":attribute debe ser un número entero.",
     "ip"               => ":attribute debe ser una dirección IP válida.",
     "max"              => [

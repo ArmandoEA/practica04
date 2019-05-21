@@ -11,7 +11,7 @@
       <div style="overflow-x:auto;">
       <table class="tabla">
 
-        <tbody class="tabla_cuerpo">
+        <tbody>
           @foreach($bolsos as $bolso)
             <tr>
               <td>

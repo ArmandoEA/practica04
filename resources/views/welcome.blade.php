@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Bolos ALE</title>
+        <meta name="description" content="Bienvenido al sitio de los mejores bolsos. Aquí encontrarás todo lo que buscas">
+        <meta name="keywords" content="bolsos, bolsas, ALE, moda">
+        <meta name="author" content="Armando Espinoza">
+        <meta name="reploy-to" content="armando_2496@hotmail.com">
+        <meta name="robots" content="all">
+        <title>Bienvenidos a Bolsos ALE</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
